@@ -88,11 +88,20 @@
          color: var(--accent); background: var(--accent-soft); padding: 5px 8px; border-radius: 6px;
          vertical-align: 3px; margin-left: 8px; }
 
-  .xp { display: grid; grid-template-columns: 1fr auto; gap: 2px 20px; margin-bottom: 22px; }
+  /* Logo tiles: white in both themes so dark-ink crests stay visible */
+  .logo-tile { flex: none; display: inline-flex; align-items: center; justify-content: center;
+               width: 44px; height: 44px; padding: 5px; background: #fff;
+               border: 1px solid var(--rule); border-radius: 10px; }
+  .logo-tile img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .logo-tile.sm { width: 28px; height: 28px; padding: 3px; border-radius: 7px; }
+  .affil { display: flex; align-items: center; gap: 10px; }
+
+  .xp { display: grid; grid-template-columns: 44px 1fr auto; gap: 2px 16px; margin-bottom: 24px; align-items: start; }
   .xp:last-child { margin-bottom: 0; }
-  .xp strong { font-weight: 500; }
-  .xp .when { color: var(--muted); font-size: 14px; font-family: var(--mono); white-space: nowrap; }
-  .xp .what { grid-column: 1 / -1; color: var(--muted); font-size: 15px; margin: 0; }
+  .xp .logo-tile { grid-row: 1 / span 2; margin-top: 2px; }
+  .xp strong { font-weight: 500; grid-column: 2; }
+  .xp .when { color: var(--muted); font-size: 14px; font-family: var(--mono); white-space: nowrap; grid-column: 3; }
+  .xp .what { grid-column: 2 / -1; color: var(--muted); font-size: 15px; margin: 0; }
 
   footer { margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--rule);
            display: flex; justify-content: space-between; gap: 16px; color: var(--muted); font-size: 13.5px; }
@@ -104,7 +113,10 @@
     header { grid-template-columns: 1fr; gap: 20px; }
     .portrait { order: -1; width: 104px; height: 104px; border-radius: 18px; }
     h1 { font-size: 36px; }
-    .xp { grid-template-columns: 1fr; }
+    .xp { grid-template-columns: 38px 1fr; column-gap: 14px; }
+    .xp .logo-tile { width: 38px; height: 38px; padding: 4px; grid-row: 1 / span 3; }
+    .xp .when { grid-column: 2; }
+    .xp .what { grid-column: 2; }
   }
 </style>
 </head>
@@ -114,7 +126,7 @@
   <header>
     <div>
       <h1>Gusheng (Justin) Pan</h1>
-      <p class="role">Information Engineering · University of Cambridge</p>
+      <p class="role affil"><span class="logo-tile sm"><img src="assets/logos/cambridge.png" alt=""></span><span>Information Engineering · University of Cambridge</span></p>
     </div>
     <img class="portrait" src="assets/portrait.jpg" alt="Portrait of Gusheng Pan" width="132" height="132">
   </header>
@@ -134,9 +146,9 @@
     <li><a href="https://openreview.net/profile?id=~Gusheng_Pan1">
       <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1h7l3 3v11H3V1zm6.5 1v2.5H12L9.5 2zM5 7h6v1H5V7zm0 2.5h6v1H5v-1zM5 12h4v1H5v-1z"/></svg>
       OpenReview</a></li>
-    
-    <li><a href="mailto:gushengpan [at] outlook [dot] com">Email</a></li>
-    
+    <!-- Optional: uncomment to add an email link
+    <li><a href="mailto:YOUR-EMAIL-HERE">Email</a></li>
+    -->
   </ul>
 
   <section id="publications">
@@ -151,6 +163,7 @@
       <div class="actions">
         <a href="https://openreview.net/pdf?id=RIVQZtAhxW">PDF</a>
         <a href="https://openreview.net/forum?id=RIVQZtAhxW">OpenReview</a>
+        <a href="files/axiomshift-code.zip" download>Code</a>
       </div>
     </article>
 
@@ -182,10 +195,7 @@
       <h3>AxiomShift benchmark &amp; toolkit <span class="tag">Research code</span></h3>
       <p class="summary">The full AxiomShift release: organised code, question data and solvers for all seven worlds, plus an easy-to-use GUI for reproducing the paper's results and building new altered-axiom questions on top of it.</p>
       <div class="actions">
-        <!-- When the code is public, replace the span below with:
-        <a href="REPO-URL-HERE">Code</a>
-        -->
-        <span class="soon">Code coming soon</span>
+        <a href="files/axiomshift-code.zip" download>Download code (.zip, 3.8 MB)</a>
         <a href="https://openreview.net/forum?id=RIVQZtAhxW">Paper</a>
       </div>
     </article>
@@ -195,16 +205,19 @@
     <h2>Experience</h2>
 
     <div class="xp">
+      <span class="logo-tile"><img src="assets/logos/oxford.png" alt="University of Oxford"></span>
       <strong>Research Assistant, OATML, University of Oxford</strong>
       <span class="when">Apr – Sep 2026</span>
       <p class="what">With Dr Yihong Chen. Designed and ran GPU-cluster experiments on how LLMs separate knowledge from reasoning.</p>
     </div>
     <div class="xp">
+      <span class="logo-tile"><img src="assets/logos/imperial.png" alt="Imperial College London"></span>
       <strong>UROP, Imperial College London</strong>
       <span class="when">Apr – Sep 2026</span>
       <p class="what">With Dr Gergely Flamich. Experiments on improving JPEG compression with relative entropy coding.</p>
     </div>
     <div class="xp">
+      <span class="logo-tile"><img src="assets/logos/lingnan.png" alt="Lingnan University"></span>
       <strong>Summer Intern, Lingnan University, Hong Kong</strong>
       <span class="when">May – Jul 2025</span>
       <p class="what">Built a low-cost baby incubator for use in the Philippines, using CFD to model the chamber's thermal regulation.</p>
