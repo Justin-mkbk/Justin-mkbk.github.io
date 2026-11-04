@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gusheng (Justin) Pan</title>
+<meta name="description" content="Gusheng (Justin) Pan — Information Engineering undergraduate at the University of Cambridge, researching LLM reasoning and evaluation.">
+<meta property="og:title" content="Gusheng (Justin) Pan">
+<meta property="og:description" content="LLM reasoning and evaluation · University of Cambridge">
+<meta property="og:image" content="assets/portrait.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e5b63'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' text-anchor='middle' fill='%23f6f4ef'%3EGP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f6f4ef;
+    --card: #fbfaf7;
+    --ink: #1d1c1a;
+    --muted: #6a675f;
+    --rule: #e2ded4;
+    --accent: #2e5b63;
+    --accent-soft: #e3ebea;
+    --serif: "Newsreader", Georgia, serif;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #191917; --card: #20201d; --ink: #ecebe6; --muted: #a29f96;
+      --rule: #33322e; --accent: #8fc1c4; --accent-soft: #24302f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #191917; --card: #20201d; --ink: #ecebe6; --muted: #a29f96;
+    --rule: #33322e; --accent: #8fc1c4; --accent-soft: #24302f;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font: 400 16.5px/1.65 var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: underline; text-decoration-color: var(--rule);
+      text-underline-offset: 3px; text-decoration-thickness: 1px; transition: color .15s, text-decoration-color .15s; }
+  a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+
+  .wrap { max-width: 720px; margin: 0 auto; padding: 72px 24px 56px; }
+
+  /* ---------- Header ---------- */
+  header { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: start; }
+  h1 { font: 500 44px/1.1 var(--serif); letter-spacing: -0.01em; margin: 0 0 10px; }
+  .role { color: var(--muted); margin: 0; font-size: 15.5px; }
+  .portrait { width: 132px; height: 132px; border-radius: 22px; object-fit: cover; display: block;
+              box-shadow: 0 1px 0 var(--rule); }
+
+  .bio { margin-top: 32px; font-size: 17px; }
+  .bio p { margin: 0 0 14px; }
+
+  .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; padding: 0; list-style: none; }
+  .links a { display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px;
+             border: 1px solid var(--rule); border-radius: 999px; text-decoration: none;
+             font-size: 14px; background: var(--card); }
+  .links a:hover { border-color: var(--accent); }
+  .links svg { width: 15px; height: 15px; fill: currentColor; }
+
+  /* ---------- Sections ---------- */
+  section { margin-top: 64px; }
+  h2 { font: 400 12px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase;
+       color: var(--muted); margin: 0 0 22px; padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
+
+  .item { margin: 0 0 30px; }
+  .item:last-child { margin-bottom: 0; }
+  .item h3 { font: 500 21px/1.3 var(--serif); margin: 0 0 6px; letter-spacing: -0.005em; }
+  .authors { margin: 0; color: var(--muted); font-size: 15px; }
+  .authors a { text-decoration-color: transparent; }
+  .authors a:hover { text-decoration-color: var(--accent); }
+  .me { color: var(--ink); font-weight: 500; }
+  .venue { margin: 4px 0 0; font-size: 15px; font-style: italic; font-family: var(--serif); font-size: 16.5px; }
+  .summary { margin: 8px 0 0; font-size: 15.5px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; font-size: 14px; }
+  .actions a { color: var(--accent); text-decoration: none; }
+  .actions a:hover { text-decoration: underline; }
+  .soon { color: var(--muted); }
+  .tag { display: inline-block; font: 400 11.5px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase;
+         color: var(--accent); background: var(--accent-soft); padding: 5px 8px; border-radius: 6px;
+         vertical-align: 3px; margin-left: 8px; }
+
+  .xp { display: grid; grid-template-columns: 1fr auto; gap: 2px 20px; margin-bottom: 22px; }
+  .xp:last-child { margin-bottom: 0; }
+  .xp strong { font-weight: 500; }
+  .xp .when { color: var(--muted); font-size: 14px; font-family: var(--mono); white-space: nowrap; }
+  .xp .what { grid-column: 1 / -1; color: var(--muted); font-size: 15px; margin: 0; }
+
+  footer { margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--rule);
+           display: flex; justify-content: space-between; gap: 16px; color: var(--muted); font-size: 13.5px; }
+  .theme-btn { background: none; border: 0; color: inherit; font: inherit; cursor: pointer; padding: 0; }
+  .theme-btn:hover { color: var(--accent); }
+
+  @media (max-width: 560px) {
+    .wrap { padding: 44px 16px 40px; }
+    header { grid-template-columns: 1fr; gap: 20px; }
+    .portrait { order: -1; width: 104px; height: 104px; border-radius: 18px; }
+    h1 { font-size: 36px; }
+    .xp { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header>
+    <div>
+      <h1>Gusheng (Justin) Pan</h1>
+      <p class="role">Information Engineering · University of Cambridge</p>
+    </div>
+    <img class="portrait" src="assets/portrait.jpg" alt="Portrait of Gusheng Pan" width="132" height="132">
+  </header>
+
+  <div class="bio">
+    <p>I'm a third-year undergraduate in Information Engineering at the University of Cambridge. My research is on <strong>LLM reasoning and evaluation</strong>: what a model does at the edge of what it knows, when the premises it is given contradict its training, or leave the answer undetermined.</p>
+    <p>Most recently I was a research assistant at Oxford's <a href="https://oatml.cs.ox.ac.uk/">OATML</a> with Dr Yihong Chen, where I built AxiomShift, a benchmark that alters axioms to tell reasoning apart from recall. I'm always glad to hear from people working on reasoning, evaluation or knowledge in language models.</p>
+  </div>
+
+  <ul class="links">
+    <li><a href="https://github.com/Justin-mkbk">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+      GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/gusheng-justin-p-ab8111350">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 1.15C0 .52.52 0 1.18 0h13.64C15.48 0 16 .52 16 1.15v13.7c0 .63-.52 1.15-1.18 1.15H1.18C.52 16 0 15.48 0 14.85V1.15zm4.94 12.24V6.17H2.54v7.22h2.4zM3.74 5.18c.84 0 1.36-.55 1.36-1.25-.02-.71-.52-1.25-1.34-1.25-.82 0-1.36.54-1.36 1.25 0 .7.52 1.25 1.32 1.25h.02zm4.91 8.21V9.36c0-.22.02-.43.08-.59.17-.43.57-.88 1.23-.88.87 0 1.22.66 1.22 1.64v3.86h2.4V9.25c0-2.22-1.18-3.25-2.77-3.25-1.28 0-1.85.7-2.17 1.2v.02h-.01l.01-.02V6.17h-2.4c.03.68 0 7.22 0 7.22h2.4z"/></svg>
+      LinkedIn</a></li>
+    <li><a href="https://openreview.net/profile?id=~Gusheng_Pan1">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1h7l3 3v11H3V1zm6.5 1v2.5H12L9.5 2zM5 7h6v1H5V7zm0 2.5h6v1H5v-1zM5 12h4v1H5v-1z"/></svg>
+      OpenReview</a></li>
+    
+    <li><a href="mailto:gushengpan [at] outlook [dot] com">Email</a></li>
+    
+  </ul>
+
+  <section id="publications">
+    <h2>Publications</h2>
+
+    <!-- To add a paper: copy one <article class="item"> block and edit it. -->
+    <article class="item">
+      <h3>AxiomShift: Altering Axioms to Evaluate LLM Reasoning at Knowledge Boundaries</h3>
+      <p class="authors"><span class="me">Gusheng Pan</span>, <a href="https://openreview.net/profile?id=~Yihong_Chen3">Yihong Chen</a></p>
+      <p class="venue">NeurIPS 2026 Workshop on Mathematical Reasoning and AI (MATH-AI) · Poster</p>
+      <p class="summary">A 700-question benchmark across seven mathematical and scientific worlds, each with one axiom changed. Across 26 models, answers that fall back on the familiar rule decline more slowly than other errors, and make up a growing share of what strong models still get wrong.</p>
+      <div class="actions">
+        <a href="https://openreview.net/pdf?id=RIVQZtAhxW">PDF</a>
+        <a href="https://openreview.net/forum?id=RIVQZtAhxW">OpenReview</a>
+      </div>
+    </article>
+
+    <article class="item">
+      <h3>Memorized or Memo-rized: Prior Leakage of Procedural Knowledge in Large Language Models</h3>
+      <p class="authors">
+        <a href="https://openreview.net/profile?id=~Kexin_Wang22">Kexin Wang</a>,
+        <a href="https://openreview.net/profile?id=~Lin_Li12">Lin Li</a>,
+        <a href="https://openreview.net/profile?id=~Yi_Ren6">Yi Ren</a>,
+        <a href="https://openreview.net/profile?id=~Zihuiwen_Ye1">Zihuiwen Ye</a>,
+        <span class="me">Gusheng Pan</span>,
+        <a href="https://openreview.net/profile?id=~Yug_D_Oswal1">Yug D. Oswal</a>,
+        <a href="https://openreview.net/profile?id=~Yarin_Gal1">Yarin Gal</a>,
+        <a href="https://openreview.net/profile?id=~Yihong_Chen3">Yihong Chen</a>
+      </p>
+      <p class="venue">NeurIPS 2026 Workshop on Agents in the Wild (AIWILD) · Poster</p>
+      <p class="summary">Swapping or renaming SQL and Pandas operators in the supplied documentation shows that models across 17 open-source LLMs stay anchored to their prior, even when told to follow the documentation.</p>
+      <div class="actions">
+        <a href="https://openreview.net/pdf?id=eq5kGe9zVe">PDF</a>
+        <a href="https://openreview.net/forum?id=eq5kGe9zVe">OpenReview</a>
+      </div>
+    </article>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <article class="item">
+      <h3>AxiomShift benchmark &amp; toolkit <span class="tag">Research code</span></h3>
+      <p class="summary">The full AxiomShift release: organised code, question data and solvers for all seven worlds, plus an easy-to-use GUI for reproducing the paper's results and building new altered-axiom questions on top of it.</p>
+      <div class="actions">
+        <!-- When the code is public, replace the span below with:
+        <a href="REPO-URL-HERE">Code</a>
+        -->
+        <span class="soon">Code coming soon</span>
+        <a href="https://openreview.net/forum?id=RIVQZtAhxW">Paper</a>
+      </div>
+    </article>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="xp">
+      <strong>Research Assistant, OATML, University of Oxford</strong>
+      <span class="when">Apr – Sep 2026</span>
+      <p class="what">With Dr Yihong Chen. Designed and ran GPU-cluster experiments on how LLMs separate knowledge from reasoning.</p>
+    </div>
+    <div class="xp">
+      <strong>UROP, Imperial College London</strong>
+      <span class="when">Apr – Sep 2026</span>
+      <p class="what">With Dr Gergely Flamich. Experiments on improving JPEG compression with relative entropy coding.</p>
+    </div>
+    <div class="xp">
+      <strong>Summer Intern, Lingnan University, Hong Kong</strong>
+      <span class="when">May – Jul 2025</span>
+      <p class="what">Built a low-cost baby incubator for use in the Philippines, using CFD to model the chamber's thermal regulation.</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>© <span id="yr">2026</span> Gusheng Pan</span>
+    <button class="theme-btn" id="theme" type="button" aria-label="Toggle colour theme">Dark mode</button>
+  </footer>
+
+</main>
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('theme'), saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    if (saved) root.setAttribute('data-theme', saved);
+    function isDark() {
+      var t = root.getAttribute('data-theme');
+      return t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    function label() { btn.textContent = isDark() ? 'Light mode' : 'Dark mode'; }
+    label();
+    btn.addEventListener('click', function () {
+      var next = isDark() ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      label();
+    });
+  })();
+</script>
+</body>
+</html>
